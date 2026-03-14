@@ -101,12 +101,5 @@ fun StationItem(
                 }
             }
         }
-        Icon(
-            imageVector = Icons.Default.KeyboardArrowDown,
-            contentDescription = null,
-            tint = Color.White.copy(0.5f),
-            modifier = Modifier.size(20.dp)
-        )
-
     }
 }
