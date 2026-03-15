@@ -22,20 +22,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
-val stations = listOf(
-    "Helwan",
-    "Ain Helwan",
-    "Helwan University",
-    "Wadi Hof",
-    "Hadayek Helwan",
-    "El-Maasara",
-    "Tora El-Asmant",
-    "Maadi",
-    "Sadat",
-    "Nasser",
-    "Attaba"
-)
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun StationDropdown(
