@@ -1,5 +1,6 @@
 package com.example.metro_station_app.presentation.viewModel
 
+import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -14,6 +15,9 @@ class MetroViewModel(
     private val getAllStationsUseCase: GetAllStationsUseCase
 ) : ViewModel() {
 
+    var isArabic by mutableStateOf(false)
+        private set
+
     var startStation by mutableStateOf("")
     var endStation by mutableStateOf("")
 
@@ -23,12 +27,21 @@ class MetroViewModel(
     var stationsList by mutableStateOf<List<Station>>(emptyList())
 
     init {
-        stationsList = getAllStationsUseCase()
+        loadStations()
+    }
+    fun toggleLanguage() {
+        isArabic = !isArabic
+        startStation = ""
+        endStation = ""
+        result = null
     }
 
     fun calculateRoute() {
         if (startStation.isNotBlank() && endStation.isNotBlank()) {
             result = findRouteUseCase(startStation, endStation)
         }
+    }
+    private fun loadStations() {
+        stationsList = getAllStationsUseCase()
     }
 }

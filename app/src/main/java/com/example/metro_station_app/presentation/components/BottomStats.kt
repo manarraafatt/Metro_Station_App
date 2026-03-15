@@ -27,9 +27,10 @@ import com.example.metro_station_app.R
 fun BottomStats(
     stationCount: Int,
     time: Int,
-    fare: Int
-    ) {
-    Row (
+    fare: Int,
+    isArabic: Boolean
+) {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .background(
@@ -41,37 +42,41 @@ fun BottomStats(
     ) {
         StatUnit(
             icon = R.drawable.stations_icon,
-            label = "Stations",
+            label = if (isArabic) "محطات" else "Stations",
             value = "$stationCount",
             color = Color(0xFF4CAF50)
         )
 
-        Box (
+        Box(
             modifier = Modifier
                 .width(1.dp)
                 .height(40.dp)
                 .background(Color.White.copy(0.1f))
         )
+
         StatUnit(
             icon = R.drawable.time_icon,
-            label = "Time",
-            value = "$time min",
+            label = if (isArabic) "الوقت" else "Time",
+            value = if (isArabic) "$time دقيقة" else "$time min",
             color = Color(0xFFFF9800)
         )
-        Box (
+
+        Box(
             modifier = Modifier
                 .width(1.dp)
                 .height(40.dp)
                 .background(Color.White.copy(0.1f))
         )
+
         StatUnit(
             icon = R.drawable.mony_icon,
-            label = "Fare",
-            value = "$fare EGP",
+            label = if (isArabic) "السعر" else "Fare",
+            value = if (isArabic) "$fare جنيه" else "$fare EGP",
             color = Color(0xFF03A9F4)
         )
     }
 }
+
 @Composable
 fun StatUnit(icon: Int, label: String, value: String, color: Color) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {

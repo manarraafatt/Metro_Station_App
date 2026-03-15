@@ -8,10 +8,13 @@ import data.model.StationDto
 import domain.model.Station
 import java.io.File
 
-class MetroJsonDataSource(private val context: Context): MetroDataSource {
+class MetroJsonDataSource(
+    private val context: Context,
+    private val isArabic: Boolean = false
+): MetroDataSource {
 
     private val gson = Gson()
-    private val fileName = "cairo_metro_structured.json"
+    private val fileName = if (isArabic) "stations_ar.json" else "cairo_metro_structured.json"
     private val dto by lazy {
         val jsonString = context.assets.open(fileName)
             .bufferedReader()

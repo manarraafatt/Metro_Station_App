@@ -19,14 +19,14 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun TopBar(navController: NavController) {
+fun TopBar(navController: NavController, isArabic: Boolean) {
 
     Row(
         modifier = Modifier.padding(top = 20.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(
-            onClick = {navController.popBackStack()}
+            onClick = { navController.popBackStack() }
         ) {
             Icon(
                 imageVector = Icons.Default.ArrowBack,
@@ -37,7 +37,7 @@ fun TopBar(navController: NavController) {
         Spacer(modifier = Modifier.width(8.dp))
 
         Text(
-            text = "Route Details",
+            text = if (isArabic) "تفاصيل المسار" else "Route Details",
             color = Color.White,
             fontWeight = FontWeight.Bold,
             fontSize = 22.sp

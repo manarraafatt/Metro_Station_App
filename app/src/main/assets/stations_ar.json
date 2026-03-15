@@ -1,0 +1,748 @@
+{
+  "stations": [
+    {
+      "id": 1,
+      "name": "حلوان",
+      "line": "الخط الأول",
+      "order": 0,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 2,
+      "name": "عين حلوان",
+      "line": "الخط الأول",
+      "order": 1,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 3,
+      "name": "جامعة حلوان",
+      "line": "الخط الأول",
+      "order": 2,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 4,
+      "name": "وادي حوف",
+      "line": "الخط الأول",
+      "order": 3,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 5,
+      "name": "حدائق حلوان",
+      "line": "الخط الأول",
+      "order": 4,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 6,
+      "name": "المعصرة",
+      "line": "الخط الأول",
+      "order": 5,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 7,
+      "name": "طرة الأسمنت",
+      "line": "الخط الأول",
+      "order": 6,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 8,
+      "name": "كوتسيكا",
+      "line": "الخط الأول",
+      "order": 7,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 9,
+      "name": "طرة البلد",
+      "line": "الخط الأول",
+      "order": 8,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 10,
+      "name": "تكنات المعادي",
+      "line": "الخط الأول",
+      "order": 9,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 11,
+      "name": "المعادي",
+      "line": "الخط الأول",
+      "order": 10,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 12,
+      "name": "حدائق المعادي",
+      "line": "الخط الأول",
+      "order": 11,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 13,
+      "name": "دار السلام",
+      "line": "الخط الأول",
+      "order": 12,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 14,
+      "name": "الزهراء",
+      "line": "الخط الأول",
+      "order": 13,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 15,
+      "name": "مار جرجس",
+      "line": "الخط الأول",
+      "order": 14,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 16,
+      "name": "الملك الصالح",
+      "line": "الخط الأول",
+      "order": 15,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 17,
+      "name": "السيدة زينب",
+      "line": "الخط الأول",
+      "order": 16,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 18,
+      "name": "سعد زغلول",
+      "line": "الخط الأول",
+      "order": 17,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 19,
+      "name": "السادات",
+      "line": "الخط الأول",
+      "order": 18,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثاني"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "ناصر",
+      "line": "الخط الأول",
+      "order": 19,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثالث"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "عرابي",
+      "line": "الخط الأول",
+      "order": 20,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 22,
+      "name": "الشهداء",
+      "line": "الخط الأول",
+      "order": 21,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثاني"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "غمرة",
+      "line": "الخط الأول",
+      "order": 22,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 24,
+      "name": "الدمرداش",
+      "line": "الخط الأول",
+      "order": 23,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 25,
+      "name": "منشية الصدر",
+      "line": "الخط الأول",
+      "order": 24,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 26,
+      "name": "كوبري القبة",
+      "line": "الخط الأول",
+      "order": 25,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 27,
+      "name": "حمامات القبة",
+      "line": "الخط الأول",
+      "order": 26,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 28,
+      "name": "سراي القبة",
+      "line": "الخط الأول",
+      "order": 27,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 29,
+      "name": "حدائق الزيتون",
+      "line": "الخط الأول",
+      "order": 28,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 30,
+      "name": "حلمية الزيتون",
+      "line": "الخط الأول",
+      "order": 29,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 31,
+      "name": "المطرية",
+      "line": "الخط الأول",
+      "order": 30,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 32,
+      "name": "عين شمس",
+      "line": "الخط الأول",
+      "order": 31,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 33,
+      "name": "عزبة النخل",
+      "line": "الخط الأول",
+      "order": 32,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 34,
+      "name": "المرج",
+      "line": "الخط الأول",
+      "order": 33,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 35,
+      "name": "المرج الجديدة",
+      "line": "الخط الأول",
+      "order": 34,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 36,
+      "name": "المنيب",
+      "line": "الخط الثاني",
+      "order": 0,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 37,
+      "name": "ساقية مكي",
+      "line": "الخط الثاني",
+      "order": 1,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 38,
+      "name": "أم المصريين",
+      "line": "الخط الثاني",
+      "order": 2,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 39,
+      "name": "الجيزة",
+      "line": "الخط الثاني",
+      "order": 3,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 40,
+      "name": "فيصل",
+      "line": "الخط الثاني",
+      "order": 4,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 41,
+      "name": "جامعة القاهرة",
+      "line": "الخط الثاني",
+      "order": 5,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الثاني",
+        "الخط الثالث"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "البحوث",
+      "line": "الخط الثاني",
+      "order": 6,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 43,
+      "name": "الدقي",
+      "line": "الخط الثاني",
+      "order": 7,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 44,
+      "name": "الأوبرا",
+      "line": "الخط الثاني",
+      "order": 8,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 45,
+      "name": "السادات",
+      "line": "الخط الثاني",
+      "order": 9,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثاني"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "محمد نجيب",
+      "line": "الخط الثاني",
+      "order": 10,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 47,
+      "name": "العتبة",
+      "line": "الخط الثاني",
+      "order": 11,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الثاني",
+        "الخط الثالث"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "الشهداء",
+      "line": "الخط الثاني",
+      "order": 12,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثاني"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "مسرة",
+      "line": "الخط الثاني",
+      "order": 13,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 50,
+      "name": "روض الفرج",
+      "line": "الخط الثاني",
+      "order": 14,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 51,
+      "name": "سانت تريز",
+      "line": "الخط الثاني",
+      "order": 15,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 52,
+      "name": "خلفاوي",
+      "line": "الخط الثاني",
+      "order": 16,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 53,
+      "name": "المظلات",
+      "line": "الخط الثاني",
+      "order": 17,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 54,
+      "name": "كلية الزراعة",
+      "line": "الخط الثاني",
+      "order": 18,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 55,
+      "name": "شبرا الخيمة",
+      "line": "الخط الثاني",
+      "order": 19,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 56,
+      "name": "عدلي منصور",
+      "line": "الخط الثالث",
+      "order": 0,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 57,
+      "name": "الهايكستب",
+      "line": "الخط الثالث",
+      "order": 1,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 58,
+      "name": "عمر بن الخطاب",
+      "line": "الخط الثالث",
+      "order": 2,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 59,
+      "name": "قبة",
+      "line": "الخط الثالث",
+      "order": 3,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 60,
+      "name": "هشام بركات",
+      "line": "الخط الثالث",
+      "order": 4,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 61,
+      "name": "النزهة",
+      "line": "الخط الثالث",
+      "order": 5,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 62,
+      "name": "نادي الشمس",
+      "line": "الخط الثالث",
+      "order": 6,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 63,
+      "name": "ألف مسكن",
+      "line": "الخط الثالث",
+      "order": 7,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 64,
+      "name": "هليوبوليس",
+      "line": "الخط الثالث",
+      "order": 8,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 65,
+      "name": "هارون",
+      "line": "الخط الثالث",
+      "order": 9,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 66,
+      "name": "الأهرام",
+      "line": "الخط الثالث",
+      "order": 10,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 67,
+      "name": "كلية البنات",
+      "line": "الخط الثالث",
+      "order": 11,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 68,
+      "name": "ستاد القاهرة",
+      "line": "الخط الثالث",
+      "order": 12,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 69,
+      "name": "المعرض",
+      "line": "الخط الثالث",
+      "order": 13,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 70,
+      "name": "العباسية",
+      "line": "الخط الثالث",
+      "order": 14,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 71,
+      "name": "عبده باشا",
+      "line": "الخط الثالث",
+      "order": 15,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 72,
+      "name": "الجيش",
+      "line": "الخط الثالث",
+      "order": 16,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 73,
+      "name": "باب الشعرية",
+      "line": "الخط الثالث",
+      "order": 17,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 74,
+      "name": "العتبة",
+      "line": "الخط الثالث",
+      "order": 18,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الثاني",
+        "الخط الثالث"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "ناصر",
+      "line": "الخط الثالث",
+      "order": 19,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الأول",
+        "الخط الثالث"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "ماسبيرو",
+      "line": "الخط الثالث",
+      "order": 20,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 77,
+      "name": "صفاء حجازي",
+      "line": "الخط الثالث",
+      "order": 21,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 78,
+      "name": "الكيت كات",
+      "line": "الخط الثالث",
+      "order": 22,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 79,
+      "name": "السودان",
+      "line": "الخط الثالث",
+      "order": 23,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 80,
+      "name": "إمبابة",
+      "line": "الخط الثالث",
+      "order": 24,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 81,
+      "name": "البوهي",
+      "line": "الخط الثالث",
+      "order": 25,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 82,
+      "name": "القومية العربية",
+      "line": "الخط الثالث",
+      "order": 26,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 83,
+      "name": "الطريق الدائري",
+      "line": "الخط الثالث",
+      "order": 27,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 84,
+      "name": "محور روض الفرج",
+      "line": "الخط الثالث",
+      "order": 28,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 85,
+      "name": "التوفيقية",
+      "line": "الخط الثالث",
+      "order": 29,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 86,
+      "name": "وادي النيل",
+      "line": "الخط الثالث",
+      "order": 30,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 87,
+      "name": "جامعة الدول العربية",
+      "line": "الخط الثالث",
+      "order": 31,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 88,
+      "name": "بولاق الدكرور",
+      "line": "الخط الثالث",
+      "order": 32,
+      "is_transfer": false,
+      "transfer_lines": []
+    },
+    {
+      "id": 89,
+      "name": "جامعة القاهرة",
+      "line": "الخط الثالث",
+      "order": 33,
+      "is_transfer": true,
+      "transfer_lines": [
+        "الخط الثاني",
+        "الخط الثالث"
+      ]
+    }
+  ],
+
+  "travel_time_between_stations_minutes": 3
+}

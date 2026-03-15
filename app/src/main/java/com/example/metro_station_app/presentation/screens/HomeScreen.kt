@@ -43,7 +43,9 @@ import com.example.metro_station_app.presentation.viewModel.MetroViewModel
 @Composable
 fun HomeScreen(
     navController: NavController,
-    viewModel: MetroViewModel
+    viewModel: MetroViewModel,
+    isArabic: Boolean,
+    onToggleLanguage: () -> Unit
 ) {
 
     val stationsFromApi = viewModel.stationsList
@@ -51,14 +53,31 @@ fun HomeScreen(
 
     Box(
         modifier = Modifier.fillMaxSize()
-    ){
+    ) {
         Image(
             painter = painterResource(id = R.drawable.background),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(),
-            colorFilter = ColorFilter.tint(Color.Black.copy(alpha = 0.5f) , BlendMode.Darken)
+            colorFilter = ColorFilter.tint(Color.Black.copy(alpha = 0.5f), BlendMode.Darken)
         )
+
+        Button(
+            onClick = { onToggleLanguage() },
+            shape = RoundedCornerShape(20.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF1A2C4E)
+            ),
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(top = 60.dp , end = 30.dp)
+        ) {
+            Text(
+                text = if (isArabic) "EN" else "AR",
+                color = Color.White,
+                fontWeight = FontWeight.Bold
+            )
+        }
 
         Column(
             modifier = Modifier
@@ -67,6 +86,9 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             Surface(
                 modifier = Modifier.size(80.dp),
                 shape = CircleShape,
@@ -79,8 +101,9 @@ fun HomeScreen(
                     modifier = Modifier.padding(12.dp)
                 )
             }
+
             Text(
-                text = "Metro Route Planner",
+                text = if (isArabic) "مخطط مسار المترو" else "Metro Route Planner",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.ExtraBold,
                 color = Color.White,
@@ -95,22 +118,21 @@ fun HomeScreen(
                 colors = CardDefaults.cardColors(
                     containerColor = Color.White.copy(alpha = 0.1f)
                 ),
-                border = BorderStroke(1.dp ,Color.White.copy(alpha = 0.2f))
+                border = BorderStroke(1.dp, Color.White.copy(alpha = 0.2f))
             ) {
                 Column(
                     modifier = Modifier.padding(20.dp),
                 ) {
                     Text(
-                        text = "Start Station",
+                        text = if (isArabic) "محطة البداية" else "Start Station",
                         color = Color.White,
                         fontWeight = FontWeight.SemiBold
                     )
 
                     Spacer(modifier = Modifier.height(8.dp))
 
-
                     StationDropdown(
-                        label = "Select Start Station",
+                        label = if (isArabic) "اختر محطة البداية" else "Select Start Station",
                         station = stationsName,
                         selectedStation = viewModel.startStation,
                         onStationSelected = { viewModel.startStation = it }
@@ -119,13 +141,13 @@ fun HomeScreen(
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Text(
-                        text = "End Station",
+                        text = if (isArabic) "محطة النهاية" else "End Station",
                         color = Color.White,
                         fontWeight = FontWeight.SemiBold
                     )
 
                     StationDropdown(
-                        label = "End Station",
+                        label = if (isArabic) "اختر محطة النهاية" else "Select End Station",
                         station = stationsName,
                         selectedStation = viewModel.endStation,
                         onStationSelected = { viewModel.endStation = it }
@@ -139,24 +161,26 @@ fun HomeScreen(
                 onClick = {
                     viewModel.calculateRoute()
                     navController.navigate("result")
-                          },
+                },
                 enabled = viewModel.startStation.isNotEmpty() && viewModel.endStation.isNotEmpty(),
                 modifier = Modifier
                     .fillMaxWidth(0.8f)
                     .height(55.dp),
                 shape = RoundedCornerShape(30.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF1A2C4E))
+                    containerColor = Color(0xFF1A2C4E)
+                )
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        "Find Route",
+                        text = if (isArabic) "ابحث" else "Find Route",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Icon(
-                        imageVector = Icons.Default.Search, contentDescription = null
+                        imageVector = Icons.Default.Search,
+                        contentDescription = null
                     )
                 }
             }

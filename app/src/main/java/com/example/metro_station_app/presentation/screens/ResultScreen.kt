@@ -28,7 +28,8 @@ import domain.model.RouteResult
 @Composable
 fun ResultScreen(
     viewModel: MetroViewModel,
-    navController: NavController
+    navController: NavController,
+    isArabic: Boolean
 ) {
 
     val result = viewModel.result
@@ -40,9 +41,7 @@ fun ResultScreen(
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize(),
-            colorFilter = ColorFilter.tint(Color.Black.copy(0.7f) ,
-                BlendMode.Darken
-            )
+            colorFilter = ColorFilter.tint(Color.Black.copy(0.7f), BlendMode.Darken)
         )
 
         Column(
@@ -50,7 +49,7 @@ fun ResultScreen(
                 .fillMaxSize()
                 .padding(20.dp)
         ) {
-            TopBar(navController)
+            TopBar(navController, isArabic)
             Spacer(modifier = Modifier.height(10.dp))
 
             Card(
@@ -58,10 +57,8 @@ fun ResultScreen(
                     .weight(1f)
                     .fillMaxSize(),
                 shape = RoundedCornerShape(25.dp),
-                colors = CardDefaults.cardColors(
-                    Color.White.copy(0.05f)
-                ),
-                border = BorderStroke(1.dp , Color.White.copy(0.1f))
+                colors = CardDefaults.cardColors(Color.White.copy(0.05f)),
+                border = BorderStroke(1.dp, Color.White.copy(0.1f))
             ) {
                 Column(modifier = Modifier.fillMaxSize()) {
 
@@ -77,9 +74,10 @@ fun ResultScreen(
                                 StationItem(
                                     station = station.name,
                                     isStart = index == 0,
-                                    isEnd = index == result.stations.lastIndex,
+                                    isEnd = index == distinctStations.lastIndex,
                                     isTransfer = station.isTransfer,
-                                    showLine = index != result.stations.lastIndex
+                                    showLine = index != result.stations.lastIndex,
+                                    isArabic = isArabic
                                 )
                             }
                         }
@@ -87,13 +85,20 @@ fun ResultScreen(
                             BottomStats(
                                 stationCount = result.stations.size,
                                 time = result.time,
-                                fare = result.fare
+                                fare = result.fare,
+                                isArabic = isArabic
                             )
                         }
-                    }
-                    else if (result is RouteResult.Error) {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Text(text = result.message, color = Color.Red, fontSize = 18.sp)
+                    } else if (result is RouteResult.Error) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = if (isArabic) "لم يتم العثور على مسار" else result.message,
+                                color = Color.Red,
+                                fontSize = 18.sp
+                            )
                         }
                     }
                 }

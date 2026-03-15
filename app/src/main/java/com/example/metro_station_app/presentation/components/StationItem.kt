@@ -13,15 +13,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowDown
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -33,20 +29,19 @@ fun StationItem(
     isStart: Boolean,
     isEnd: Boolean,
     isTransfer: Boolean,
-    showLine: Boolean
+    showLine: Boolean,
+    isArabic: Boolean
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),  // 2
+            .padding(vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-            Box(
-                modifier = Modifier
-                    .width(40.dp),
-                contentAlignment = Alignment.Center
-            ){
-
+        Box(
+            modifier = Modifier.width(40.dp),
+            contentAlignment = Alignment.Center
+        ) {
             if (showLine) {
                 Box(
                     modifier = Modifier
@@ -56,22 +51,18 @@ fun StationItem(
                         .background(Color.White.copy(0.5f))
                 )
             }
-                val circleColor = when{
-                    isTransfer -> Color(0xFFFBC02D)
-                    isStart || isEnd -> Color(0xFF03A9F4)
-                    else -> Color(0xFF4CAF50)
-                }
+            val circleColor = when {
+                isStart || isEnd -> Color(0xFF03A9F4)
+                isTransfer -> Color(0xFFFBC02D)
+                else -> Color(0xFF4CAF50)
+            }
 
-                Box(
-                    modifier = Modifier
-                        .size(14.dp)
-                        .background(Color(0xFF1A2C4E), CircleShape)
-                        .border(
-                            width = 3.dp,
-                            color = circleColor,
-                            shape = CircleShape
-                        )
-                )
+            Box(
+                modifier = Modifier
+                    .size(14.dp)
+                    .background(Color(0xFF1A2C4E), CircleShape)
+                    .border(width = 3.dp, color = circleColor, shape = CircleShape)
+            )
         }
         Spacer(modifier = Modifier.width(12.dp))
 
@@ -85,18 +76,18 @@ fun StationItem(
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
-            if (isTransfer){
+            if (isTransfer) {
                 Spacer(modifier = Modifier.width(10.dp))
                 Surface(
                     color = Color(0xFFFBC02D).copy(alpha = 0.2f),
                     shape = RoundedCornerShape(8.dp),
-                    border = BorderStroke(1.dp,Color(0xFFFBC02D))
+                    border = BorderStroke(1.dp, Color(0xFFFBC02D))
                 ) {
                     Text(
-                        text = "Transfer",
+                        text = if (isArabic) "تغيير المحطة" else "Transfer",
                         color = Color(0xFFFBC02D),
                         fontSize = 10.sp,
-                        modifier = Modifier.padding(horizontal = 6.dp , vertical = 2.dp)
+                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                     )
                 }
             }

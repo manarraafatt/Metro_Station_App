@@ -16,13 +16,13 @@ import presentation.ConsoleController
 
 object AppModule {
 
-    private fun provideRepository(context: Context): domain.MetroRepository {
-        val dataSource = MetroJsonDataSource(context)
+    private fun provideRepository(context: Context, isArabic: Boolean): domain.MetroRepository {
+        val dataSource = MetroJsonDataSource(context, isArabic)
         return MetroRepositoryImpl(dataSource)
     }
 
-    fun provideMetroViewModel(context: Context): MetroViewModel {
-        val repository = provideRepository(context)
+    fun provideMetroViewModel(context: Context, isArabic: Boolean = false): MetroViewModel {
+        val repository = provideRepository(context, isArabic)
 
         val fare = CalcFareUseCase()
         val time = CalcTimeUseCase(repository)
@@ -36,30 +36,20 @@ object AppModule {
             getAllStationsUseCase = getAllStations
         )
     }
-    fun provideController(context : Context): ConsoleController {
-        val dataSource =
-            MetroJsonDataSource(
-                context
-            )
 
-        val repository =
-            MetroRepositoryImpl(
-                dataSource
-            )
+    fun provideController(context: Context): ConsoleController {
+        val dataSource = MetroJsonDataSource(context)
+        val repository = MetroRepositoryImpl(dataSource)
 
         val fare = CalcFareUseCase()
         val time = CalcTimeUseCase(repository)
         val bfsUseCase = BFSUseCase()
 
-        val findRoute =
-            FindRoutUseCase(repository, fare, time, bfsUseCase)
+        val findRoute = FindRoutUseCase(repository, fare, time, bfsUseCase)
         val getFirstStationUseCase = GetFirstStationUseCase(repository)
         val getLastStationUseCase = GetLastStationUseCase(repository)
         val direction = GetDirectionUseCase(getFirstStationUseCase, getLastStationUseCase)
 
-        return ConsoleController(
-            findRoute,
-            direction
-        )
+        return ConsoleController(findRoute, direction)
     }
 }
