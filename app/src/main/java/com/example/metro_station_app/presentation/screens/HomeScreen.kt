@@ -158,10 +158,6 @@ fun HomeScreen(
                     Icon(
                         imageVector = Icons.Default.Search, contentDescription = null
                     )
-
-
-
-
                 }
             }
         }
